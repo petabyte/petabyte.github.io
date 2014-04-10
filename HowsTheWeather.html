@@ -9,7 +9,7 @@
 	<h2 id="weatherToday" style="font-size: 3em;"></h2>
 	<button id="button1">How's the Weather?</button>
 		<script>
-		function whereToEat(temp, description) {
+		function howsTheWeather(temp, description) {
 		    if (temp >= 60) 
 			{
 				$('#weatherToday').text('The weather is great,  the temp is ' + temp + ' F and ' + description+".");
@@ -35,7 +35,7 @@
 	    	function (data) {
 	        	var temp = convertKelvinToFarenheit(data.main.temp);
 	        	var description = data.weather[0].description;
-	        	whereToEat(temp, description);
+	        	howsTheWeather(temp, description);
 	    	});
 		}
 
