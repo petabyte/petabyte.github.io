@@ -46,20 +46,18 @@
 		}
 
 		function getWeather(city) {
-            $('button').click(function() {
-               $(this).toggleClass('active');
-            });
-
     		$.getJSON('http://api.openweathermap.org/data/2.5/weather?q='+ city,
         	'{}',
 	    	function (data) {
-	        	var temp = convertKelvinToFarenheit(data.main.temp);
+                $('#button1').removeClass('active');
+	           	var temp = convertKelvinToFarenheit(data.main.temp);
 	        	var description = data.weather[0].description;
 	        	howsTheWeather(temp, description);
 	    	});
 		}
 
 		$('#button1').on("click",function () {
+            $('#button1').addClass('active');
 			 var city = $('#whichcity').val();
 		     getWeather(city);
 		 });
