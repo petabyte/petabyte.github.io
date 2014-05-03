@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
         <link rel="stylesheet" href="stylesheets/stylesheet.css" />
         <link rel="stylesheet" href="stylesheets/pygment_trac.css" />
+        <link rel="stylesheet" href="stylesheets/ownstyle.css" />
 	</head>
 	<body>
     <div class="container">
@@ -16,9 +17,14 @@
 	<h4 class="highlight">Where are you at ? (City)</h4>
 	<input id="whichcity" type="text" class="input-block-level" value="Eagan">
     <br />
-	<button id="button1" class="btn">How's the Weather?</button>
+	<button id="button1" class="btn btn-success has-spinner">
+        <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+        How's the Weather?
+    </button>
     </div>
 		<script>
+
+
 		function howsTheWeather(temp, description) {
 		    if (temp >= 60) 
 			{
@@ -40,6 +46,10 @@
 		}
 
 		function getWeather(city) {
+            $('a, button').click(function() {
+               $(this).toggleClass('active');
+            });
+
     		$.getJSON('http://api.openweathermap.org/data/2.5/weather?q='+ city,
         	'{}',
 	    	function (data) {
@@ -54,6 +64,7 @@
 		     getWeather(city);
 		 });
 		getWeather('Eagan');
+
 		</script>
 	</body>
 </html>
