@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c1fe7b8-a86c-4279-9e4b-7a8aeaf33f42" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HowsTheWeather.html" afterPath="$PROJECT_DIR$/HowsTheWeather.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="petabyte.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +56,7 @@
       <file leaf-file-name="HowsTheWeather.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HowsTheWeather.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="48" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.5463138" vertical-offset="431" max-vertical-offset="1110">
+            <state line="103" column="77" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.7731569" vertical-offset="1136" max-vertical-offset="1725">
               <folding />
             </state>
           </provider>
@@ -424,7 +425,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HowsTheWeather.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="48" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.5463138" vertical-offset="431" max-vertical-offset="1110">
+        <state line="103" column="77" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.7731569" vertical-offset="1136" max-vertical-offset="1725">
           <folding />
         </state>
       </provider>
