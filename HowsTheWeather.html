@@ -61,6 +61,8 @@
         function decodeLatLang(lat,lng){
             var latlng = new google.maps.LatLng(lat, lng);
             geoCoder.geocode({'latLng': latlng}, function(results, status) {
+                var state = '';
+                var city = '';
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[1]) {
                         //find country name

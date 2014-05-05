@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1c1fe7b8-a86c-4279-9e4b-7a8aeaf33f42" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HowsTheWeather.html" afterPath="$PROJECT_DIR$/HowsTheWeather.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="petabyte.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +47,7 @@
       <file leaf-file-name="bootstrap.min.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascripts/lib/bootstrap.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+            <state line="5" column="16" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
               <folding />
             </state>
           </provider>
@@ -55,7 +56,7 @@
       <file leaf-file-name="HowsTheWeather.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HowsTheWeather.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="63" selection-start="885" selection-end="885" vertical-scroll-proportion="0.51039696" vertical-offset="0" max-vertical-offset="1815">
+            <state line="78" column="18" selection-start="3398" selection-end="3398" vertical-scroll-proportion="-0.27599245" vertical-offset="1316" max-vertical-offset="1845">
               <folding />
             </state>
           </provider>
@@ -378,13 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascripts/lib/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stylesheets/pygment_trac.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
@@ -422,9 +416,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/lib/bootstrap.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="16" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HowsTheWeather.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="63" selection-start="885" selection-end="885" vertical-scroll-proportion="0.51039696" vertical-offset="0" max-vertical-offset="1815">
+        <state line="78" column="18" selection-start="3398" selection-end="3398" vertical-scroll-proportion="-0.27599245" vertical-offset="1316" max-vertical-offset="1845">
           <folding />
         </state>
       </provider>
