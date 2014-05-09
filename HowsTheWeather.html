@@ -64,6 +64,14 @@
 			}				
 		}
 
+        function cantFindThatCity(message) {
+            var $weatherToday = $('#weatherToday');
+            $weatherToday.empty();
+            var $cityNotFound = $("<div>" + message + ".<i class=\"fa fa-frown-o fa-2x\"></i></div>");
+            $weatherToday.append($cityNotFound);
+
+        };
+
 		function convertKelvinToFarenheit(degreeKelvin) {
 		    return Math.round((9 * (degreeKelvin - 273) / 5) + 32);
 		}
@@ -74,9 +82,22 @@
             $button1.find('.fa').addClass('fa-spinner fa-spin');
             if(city) {
                 $.getJSON('http://api.openweathermap.org/data/2.5/weather?q='+ city,'{}').done(function(data){
-                    var temp = convertKelvinToFarenheit(data.main.temp);
-                    var description = data.weather[0].description;
-                    howsTheWeather(temp, description);
+                    if(data)
+                    {
+                        var message = data.message;
+                        if(message && message.indexOf("Error")>= 0)
+                        {
+                             cantFindThatCity(message);
+                        }
+                        else
+                        {
+                            var temp = convertKelvinToFarenheit(data.main.temp);
+                            var description = data.weather[0].description;
+                            howsTheWeather(temp, description);
+                        }
+
+                    }
+
                 }).always(function(){
                             $button1.removeClass('btn-success');
                             $button1.find('.fa').removeClass('fa-spinner fa-spin');
