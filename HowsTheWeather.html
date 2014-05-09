@@ -70,6 +70,8 @@
 
 		function getWeather(city) {
             var $button1 = $('#button1');
+            $button1.addClass('btn-success');
+            $button1.find('.fa').addClass('fa-spinner fa-spin');
             if(city) {
                 $.getJSON('http://api.openweathermap.org/data/2.5/weather?q='+ city,'{}').done(function(data){
                     var temp = convertKelvinToFarenheit(data.main.temp);
@@ -133,9 +135,6 @@
          }
 
 		$('#button1').on("click",function () {
-            var $button1 =   $('#button1');
-            $button1.addClass('btn-success');
-            $button1.find('.fa').addClass('fa-spinner fa-spin');
 			 var city = $('#whichcity').val();
 		     getWeather(city);
 		 });
