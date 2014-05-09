@@ -9,7 +9,6 @@
         <script src="./javascripts/lib/underscore-min.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <link rel="stylesheet" href="stylesheets/bootstrap.min.css" />
-        <link rel="stylesheet" href="stylesheets/ownstyle.css" />
 	</head>
 	<body>
     <div class="container-fluid">
@@ -20,18 +19,13 @@
         </div>
         <div class="row-fluid">
             <div class="col-xs-12">
-	          <h4>Where are you at ? (City)</h4>
-            </div>
-        </div>
-        <div class="row-fluid">
-            <div class="col-xs-12">
+                <label for="whichcity"> <h4>Where are you at ? (City)</h4></label>
 	            <input id="whichcity" type="text" class="input-block-level" />
             </div>
         </div>
         <div class="row-fluid">
             <div class="col-xs-12">
-                <button id="button1" class="btn btn-success has-spinner">
-                   <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+                <button id="button1" class="btn">
                        How's the Weather?
                 </button>
             </div>
@@ -42,33 +36,41 @@
          var geoCoder = new google.maps.Geocoder();
 
 		function howsTheWeather(temp, description) {
-		    if (temp >= 60) 
+            var $weatherToday = $('#weatherToday');
+		    if (temp >= 60 && temp <= 80)
 			{
-				$('#weatherToday').text('The weather is great. Get the hell out,  the temp is ' + temp + ' F and ' + description+".");
-    			}     			
-				else if (temp <= 32) 
+                $weatherToday.text('The weather is great. Get the hell out,  the temp is ' + temp + ' F and ' + description+".");
+    		}
+			else if (temp <= 32)
 			{
-				$('#weatherToday').text('The weather is crappy! You might want to stay in the temp is ' + temp + ' F and ' + description+".");
-		    	}
+                $weatherToday.text('The weather is crappy! You might want to stay in the temp is ' + temp + ' F and ' + description+".");
+		    } else if (temp > 80){
+                $weatherToday.text('The weather is not good! You might want to stay cool the temp is ' + temp + ' F and ' + description+".");
+            }
 			else
 			{
-				$('#weatherToday').text('Just the usual. Today the temp is ' + temp + ' F and ' + description+".");
+                $weatherToday.text('Just the usual. Today the temp is ' + temp + ' F and ' + description+".");
 			}				
 		}
 
 		function convertKelvinToFarenheit(degreeKelvin) {
-		    var Farenheit = Math.round((9 * (degreeKelvin - 273) / 5) + 32);
-		    return Farenheit;
+		    return Math.round((9 * (degreeKelvin - 273) / 5) + 32);
 		}
 
 		function getWeather(city) {
-    		$.getJSON('http://api.openweathermap.org/data/2.5/weather?q='+ city,'{}').done(function(data){
-                var temp = convertKelvinToFarenheit(data.main.temp);
-                var description = data.weather[0].description;
-                howsTheWeather(temp, description);
-            }).always(function(){
-               $('#button1').removeClass('active');
-            });
+            var $button1 = $('#button1');
+            if(city) {
+                $.getJSON('http://api.openweathermap.org/data/2.5/weather?q='+ city,'{}').done(function(data){
+                    var temp = convertKelvinToFarenheit(data.main.temp);
+                    var description = data.weather[0].description;
+                    howsTheWeather(temp, description);
+                }).always(function(){
+                            $button1.removeClass('btn-success');
+                        });
+            }else{
+                $button1.removeClass('btn-success');
+            }
+
 		}
 
         function decodeLatLang(lat,lng){
@@ -118,7 +120,7 @@
          }
 
 		$('#button1').on("click",function () {
-            $('#button1').addClass('active');
+            $('#button1').addClass('btn-success');
 			 var city = $('#whichcity').val();
 		     getWeather(city);
 		 });
