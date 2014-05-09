@@ -38,6 +38,7 @@
     </div>
 		<script>
          var currentCity = 'Eagan';
+         var $whichCity = $('#whichcity');
          var geoCoder = new google.maps.Geocoder();
 
 		function howsTheWeather(temp, description) {
@@ -134,7 +135,7 @@
                         }
                         //city data
                         currentCity = city.long_name +', '+state.long_name;
-                        $('#whichcity').val(currentCity);
+                        $whichCity.val(currentCity);
                     }
                 }
             });
@@ -155,13 +156,24 @@
              }
          }
 
-		$('#button1').on("click",function () {
-			 var city = $('#whichcity').val();
-		     getWeather(city);
-		 });
+	function getWeatherForInputCity () {
+		var city = $whichCity.val();
+		if (city) {
+			getWeather(city);
+		}
+	}		
+	$('#button1').on("click",function () {
+		getWeatherForInputCity();
+	});
+		 
+	$whichCity.keypress(function(event){
+		if ( event.which === 13 ) {
+			getWeatherForInputCity();
+  		}
+	});
 
         getLocation();
-		getWeather(currentCity);
-		</script>
+	getWeather(currentCity);
+	</script>
 	</body>
 </html>
