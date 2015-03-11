@@ -10,6 +10,7 @@
    <foaf:workInfoHomepage rdf:resource="http://petabyte.github.io/"/>
    <foaf:workplaceHomepage rdf:resource="http://petabyte.github.io/"/>
    <foaf:account rdf:resource="http://twitter.com/petabyteflop"/>
+   <foaf:img>http://petabyte.github.io/GeorgePhoto.jpg</foaf:img>
    <foaf:givenname>George</foaf:givenname>
    <foaf:family_name>Sanchez</foaf:family_name>
    <foaf:homepage rdf:resource="http://petabyte.github.io/HowsTheWeather.html"/>
