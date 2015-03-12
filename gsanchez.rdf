@@ -7,6 +7,8 @@
    <rdf:value>George Sanchez, petabyte.gs@gmail.com</rdf:value>
    <foaf:name>George Sanchez</foaf:name>
    <foaf:geekcode>GIT/E d-(?) s a? C++++ UBLAHS+++(+) P++ L++ E W++ N+ o+ K+ w++ O--- M+ V- PS PE+ Y+ PGP t+ 5+ X+ R+ tv+ b++(+++) DI++ D+ G e+++ h r+++ z+</foaf:geekcode>
+   
+   <foaf:homepage rdf:resource="http://petabyte-georgesanchez.blogspot.com/"></foaf:homepage>
    <foaf:workInfoHomepage rdf:resource="http://petabyte.github.io/"/>
    <foaf:workplaceHomepage rdf:resource="http://petabyte.github.io/"/>
    <foaf:account rdf:resource="http://twitter.com/petabyteflop"/>
