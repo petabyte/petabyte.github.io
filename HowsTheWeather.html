@@ -135,7 +135,7 @@
                             }
                         }
                         //city data
-                        currentCity = city.long_name +', '+state.long_name;
+                        currentCity = city.long_name + (state.long_name ? ','+state.long.name:'');
                         $whichCity.val(currentCity);
                     }
                 }
