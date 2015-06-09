@@ -95,6 +95,7 @@
                             var temp = convertKelvinToFarenheit(data.main.temp);
                             var description = data.weather[0].description;
                             howsTheWeather(temp, description);
+                            decodeLatLang(data.coord.lat, data.coord.lon);
                         }
 
                     }
