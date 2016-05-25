@@ -18,7 +18,7 @@ if (annyang) {
    var $speech = $('<p class="active display-4"></p>').text(userSaid[0]);	
    $('#speechId').append($speech);
  });
- annyang.start({autoRestart:true, continous:true});
+ annyang.start({autoRestart:true, continous:false});
  console.log(annyang.isListening());
 }
 
