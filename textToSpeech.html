@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/annyang/2.4.0/annyang.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+if (annyang) {
+// Start listening. You can call this here, or attach this call to an event, button, etc.
+ annyang.setLanguage('en-US');
+ annyang.setLanguage('en-GB');
+ annyang.setLanguage('en-CA');
+
+ annyang.addCallback('result', function(userSaid, commandText,phrases){
+   var $speech = $('<p class="active display-4"></p>').text(userSaid[0]);	
+   $('#speechId').append($speech);
+ });
+ annyang.start({autoRestart:true, continous:true});
+ console.log(annyang.isListening());
+}
+
+});
+</script>
+</head>
+<div class="container-fluid" id="speechId"></div>
+</body>
+</html>
