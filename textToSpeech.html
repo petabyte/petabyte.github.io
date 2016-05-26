@@ -24,7 +24,7 @@ if (annyang) {
  annyang.setLanguage('en-CA');
 
  annyang.addCallback('result', function(userSaid, commandText,phrases){
-   var $speech = $('<p class="active display-4"></p>').text(userSaid[0]);
+   var $speech = $('<div class="active display-4"></div>').text(userSaid[0]);
    var $textArea = $('#speechId');
    if($textArea.size() > 100){
    	$textArea.empty();
