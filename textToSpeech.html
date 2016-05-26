@@ -33,7 +33,7 @@ if (annyang) {
  annyang.setLanguage('en-CA');
 
  annyang.addCallback('result', function(userSaid, commandText,phrases){
-   var $speech = $('<div class="row row-striped display-2"></div>').text(userSaid[0]);
+   var $speech = $('<div class="row row-striped display-3"></div>').text(userSaid[0]);
    var $textArea = $('#speechId');
    if($textArea.size() > 100){
    	$textArea.empty();
