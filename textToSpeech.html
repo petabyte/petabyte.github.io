@@ -12,6 +12,15 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<style>
+.row-striped:nth-of-type(odd){
+  background-color: #efefef;
+}
+
+.row-striped:nth-of-type(even){
+  background-color: #ffffff;
+}
+</style>
 </head>
 <body>
 <div class="container-fluid" id="speechId"></div>
@@ -24,7 +33,7 @@ if (annyang) {
  annyang.setLanguage('en-CA');
 
  annyang.addCallback('result', function(userSaid, commandText,phrases){
-   var $speech = $('<div class="active display-4"></div>').text(userSaid[0]);
+   var $speech = $('<div class="row row-striped display-2"></div>').text(userSaid[0]);
    var $textArea = $('#speechId');
    if($textArea.size() > 100){
    	$textArea.empty();
