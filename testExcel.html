@@ -28,7 +28,13 @@
 				selectedCell: "'Sheet1'!D4",
 				showParametersTaskPane: false
 			},
-			interactivityOptions: { }
+			interactivityOptions: { 
+			 allowTypingAndFormulaEntry: false,
+                         allowParameterModification: false,
+                         allowSorting: false,
+                         allowFiltering: false,
+                         allowPivotTableInteractivity: false
+			}
 		};
 
 		Ewa.EwaControl.loadEwaAsync(fileToken, "myExcelDiv", props, onEwaLoaded);
