@@ -33,13 +33,32 @@
 
 		Ewa.EwaControl.loadEwaAsync(fileToken, "myExcelDiv", props, onEwaLoaded);
 	}
+	
 
 	function onEwaLoaded(result) {
-		/*
-		 * Add code here to interact with the embedded Excel web app.
-		 * Find out more at https://msdn.microsoft.com/en-US/library/hh315812.aspx.
-		 */
+		if (asyncResult.getSucceeded())
+	        {
+	            // Use the AsyncResult.getEwaControl() method to get a reference to the EwaControl object
+	            ewa = asyncResult.getEwaControl();
+	            ewa.add_activeCellChanged(cellChanged);
+	        }
+	        else
+	        {
+	            alert("Async operation failed!");
+	        }
 	}
+	
+	// Handle the active cell changed event.
+    function cellChanged(rangeArgs)
+    {
+        // Use the RangeEventArgs object to get information about the range.
+        var sheetName = rangeArgs.getRange().getSheet().getName();
+        var col = rangeArgs.getRange().getColumn();
+        var row = rangeArgs.getRange().getRow();
+        var value = rangeArgs.getFormattedValues();
+        alert("The active cell is located at row " + (row + 1) + " and column " + (col + 1) + " with value '" + value + "'.");
+        // ...
+    }
 </script>
 </body>
 </html>
