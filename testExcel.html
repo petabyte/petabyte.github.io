@@ -47,14 +47,20 @@
 	}
 	
 	// Handle the active cell changed event.
-    function cellChanged(rangeArgs)
+    function cellChanged(rangeEditArgs)
     {
-        // Use the RangeEventArgs object to get information about the range.        
-        var sheetName = rangeArgs.getRange().getSheet().getName();
-        var col = rangeArgs.getRange().getColumn();
-        var row = rangeArgs.getRange().getRow();
-        var value = rangeArgs.getFormattedValues();
-        alert("The active cell is located at row " + (row + 1) + " and column " + (col + 1) + " with value '" + value + "'.");
+	    // Get the value of the cell before editing
+	    var oldValue = rangeEditArgs.getTargetOldUnformattedValue();
+	    // Get the value of the cell after editing
+	    var newValue = rangeEditArgs.getTargetUnformattedValue();
+
+	    // Display the before and after values of the cell
+	    alert("Old value: " + oldValue.toString() + "\nNew value: " + newValue.toString());
+
+	    var o = "Set via code";
+
+	    // Set the value of the cell via code
+	    rangeEditArgs.setTargetUnformattedValue(o);
     }
 </script>
 </body>
