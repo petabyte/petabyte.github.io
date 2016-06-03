@@ -38,7 +38,7 @@
 	        {
 	            // Use the AsyncResult.getEwaControl() method to get a reference to the EwaControl object
 	            ewa = asyncResult.getEwaControl();
-	            ewa.add_enteredCellEditing(cellChanged)
+	            ewa.add_commitCellEditing(cellChanged);
 	        }
 	        else
 	        {
@@ -49,12 +49,18 @@
 	// Handle the active cell changed event.
     function cellChanged(rangeArgs)
     {
-	  // Use the RangeEventArgs object to get information about the range.
-     var sheetName = rangeArgs.getRange().getSheet().getName();
-     var col = rangeArgs.getRange().getColumn();
-     var row = rangeArgs.getRange().getRow();
-     var value = rangeArgs.getFormattedValues();
-     alert('new value' + value);
+  // Get the value of the cell before editing
+    var oldValue = rangeEditArgs.getTargetOldUnformattedValue();
+    // Get the value of the cell after editing
+    var newValue = rangeEditArgs.getTargetUnformattedValue();
+
+    // Display the before and after values of the cell
+    alert("Old value: " + oldValue.toString() + "\nNew value: " + newValue.toString());
+
+    var o = "Set via code - by George Sanchez";
+
+    // Set the value of the cell via code
+    rangeEditArgs.setTargetUnformattedValue(o);
     }
 </script>
 </body>
