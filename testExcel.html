@@ -33,7 +33,7 @@
 		Ewa.EwaControl.loadEwaAsync(fileToken, "myExcelDiv", props, onEwaLoaded);
 	}
 	
-	function onEwaLoaded(result) {
+	function onEwaLoaded(asyncResult) {
 		if (asyncResult.getSucceeded())
 	        {
 	            // Use the AsyncResult.getEwaControl() method to get a reference to the EwaControl object
@@ -49,7 +49,7 @@
 	// Handle the active cell changed event.
     function cellChanged(rangeArgs)
     {
-        // Use the RangeEventArgs object to get information about the range.
+        // Use the RangeEventArgs object to get information about the range.        
         var sheetName = rangeArgs.getRange().getSheet().getName();
         var col = rangeArgs.getRange().getColumn();
         var row = rangeArgs.getRange().getRow();
