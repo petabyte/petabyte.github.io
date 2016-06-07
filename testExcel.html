@@ -10,8 +10,8 @@
 	 * https://msdn.microsoft.com/en-US/library/hh315812.aspx. There you can find out how to programmatically get
 	 * values from your Excel file and how to use the rest of the object model. 
 	 */
-	// Use this file token to reference SampleExcel.xlsx in Excel's APIs
-	var fileToken = "SD31C7FF9A9733B3C1!111/3587116667650683841/t=0&s=0&v=!AHg-8_Je4zV6TiI";
+	// Use this file token to reference Built-in Gains Worksheet.xlsx in Excel's APIs
+	var fileToken = "SD31C7FF9A9733B3C1!113/3587116667650683841/t=0&s=0&v=!AGNqa-7NgTZRWFQ";
 	// run the Excel load handler on page load
 	if (window.attachEvent) {
 		window.attachEvent("onload", loadEwaOnPageLoad);
@@ -21,13 +21,8 @@
 	function loadEwaOnPageLoad() {
 		var props = {
 			uiOptions: {
-				showDownloadButton: false,
-				selectedCell: "'Sheet1'!D4",
-				showParametersTaskPane: false
 			},
 			interactivityOptions: { 
-                         allowParameterModification: false,
-                         allowPivotTableInteractivity: false
 			}
 		};
 		Ewa.EwaControl.loadEwaAsync(fileToken, "myExcelDiv", props, onEwaLoaded);
