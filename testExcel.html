@@ -29,31 +29,7 @@
 	}
 	
 	function onEwaLoaded(asyncResult) {
-		if (asyncResult.getSucceeded())
-	        {
-	            // Use the AsyncResult.getEwaControl() method to get a reference to the EwaControl object
-	            ewa = asyncResult.getEwaControl();
-	            ewa.add_commitCellEditing(cellChanged);
-	        }
-	        else
-	        {
-	            alert("Async operation failed!");
-	        }
 	}
-	
-	// Handle the active cell changed event.
-    function cellChanged(rangeEditArgs)
-    {
-  	// Get the value of the cell before editing
-    	var oldValue = rangeEditArgs.getTargetOldUnformattedValue();
-    	// Get the value of the cell after editing
-    	var newValue = rangeEditArgs.getTargetUnformattedValue();
-    	// Display the before and after values of the cell
-    	alert("Old value: " + oldValue.toString() + "\nNew value: " + newValue.toString());
-    	var o = "Set via code - by George Sanchez";
-    	// Set the value of the cell via code
-    	rangeEditArgs.setTargetUnformattedValue(o);
-    }
 </script>
 </body>
 </html>
